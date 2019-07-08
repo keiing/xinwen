@@ -134,9 +134,7 @@
                 </div>
                 <!-- 轮播图广告 只是个框架-->
                 <div class="bgf4f5f6 row mt-3">
-                    <div class="card-body my-3 mx-2">
-                        <img src="" alt="" />
-                    </div>
+
                 </div>
                 <!-- 轮播图广告 只是个框架-->
                 <div class="bgf4f5f6 row mt-3">
@@ -252,39 +250,41 @@
                         arr[i].pic !== "null" ? src = `src` : src = `class`;
                         title += `
                 <li class="border-bottom row mb-3">
-                <a class="col-3" href="detail.html?pid=${arr[i].pid}"><img ${src}="${arr[i].pic}" id="indexjsimg"></a>
-                <div class="col-9">
+                <a class="col-3" href="detail.html?pid=${arr[i].pid}">
+                    <img ${src}="${arr[i].pic}" id="indexjsimg"></a>
+                <div class="col-9 pl-5">
                 <div class="row mt-lg-2">
-                <a class="col-12" href="detail.html?pid=${arr[i].pid}"><span class="font-size-1">${arr[i].title}</span></a>
-                <div class="col-12 mt-3"><a class="mr-3" href="detail.html?pid=${arr[i].pid}#source"><span><img src="${arr[i].Source_picture}" alt=""/>${arr[i].source}</span></a>
-                <a href="" class="mr-3"><span>${arr[i].comment}评论</span></a>
-                <span>${arr[i].Release_time}小时前发布</span>
-                </div>
+                <a class="col-12" href="detail.html?pid=${arr[i].pid}">
+                    <span class="font-size-1">${arr[i].title}</span>
+                </a>
                 </div>
                 </div>
                 </li>
                 `;
                     }
                     var html = "";
-                    for (var i = 0; i < 12; i++) {
-                        while (html.length < 1336) {
-                            var index = Math.round(Math.random() * arr.length);
-                            // if (html.indexOf(index) == -1) {
-                            html += `
-                <li class="col-3 p-0 m-0 my-1">
-                <a href="detail.html?pid=${arr[index].pid}">
-                <img width="100%" ${src}="${arr[index].pic}">
+                    var arrstr = [];
+                    for (var i = 0; arrstr.length < 4; i++) {
+                        var assc = Math.floor(arr.length * Math.random());
+                        if (arrstr.indexOf(assc) === -1) {
+                            arrstr.push(assc);
+                        }
+                    }
+
+                    for (var i = 0; i < arrstr.length; i++) {
+                        html += `
+                <li class="col-3 p-0 m-0 my-1 border-bottom">
+                <a href="detail.html?pid=${arr[arrstr[i]].pid}">
+                <img width="100%" src="${arr[arrstr[i]].pic}">
                 </a></li>
                 <li class="col-9 my-1">
-                <a href="detail.html?pid=${arr[index].pid}">
-                <span class="font-size-2">${arr[index].title}</span>
+                <a href="detail.html?pid=${arr[arrstr[i]].pid}">
+                <span class="font-size-3">${arr[arrstr[i]].title}</span>
                 </a></li>`;
-
-                            // }
-                        }
                     }
                     my_title1.innerHTML = title;
                     document.getElementById("rewen").innerHTML = html;
+                    document.getElementById("rewenjs").innerHTML = html;
                 }
             }
             xhr.open('get', httpUrl + '/index/indexjs?indexvalue=' + translate.value, true);

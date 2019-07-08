@@ -1,0 +1,62 @@
+#ul-imgs{
+  display:flex;
+}
+   #btn-left-indexlunbo {
+       transform: rotate(90deg);
+       top:-40px !important;
+       background-image: url(http://127.0.0.1:3000/img/left_ar.png);
+   }
+
+   #btn-right-indexlunbo {
+       transform: rotate(90deg);
+       top: 200px !important;
+       background-image: url(http://127.0.0.1:3000/img/right_ar.png);
+   }
+
+   
+   #btn-left-indexlunbo,
+   #btn-right-indexlunbo {
+       width: 100%;
+       height: 50px;
+       position: absolute;
+       top: 0;
+       /* background-repeat: no-repeat; */
+       background-position: center;
+       background-repeat: no-repeat;
+       /* cursor: pointer; */
+
+   }
+/* 
+
+                       <div id="main col-row p-0 m-0">
+                                <div id="banner col-10 p-0 m-0" style="overflow: hidden">
+                                    <div id="ul-imgs" class="transition">
+                                        <img style="width:100%" src="/img/lunbotu/carousel-1.jpg">
+                                        <img style="width:100%" src="/img/lunbotu/carousel-2.jpg">
+                                        <img style="width:100%" src="/img/lunbotu/carousel-3.jpg">
+                                        <img style="width:100%" src="/img/lunbotu/carousel-4.jpg">
+                                        <!--注意！最后li个数要比实际图片张数多1，最后一个li里的img是重复第一张li的图片-->
+                                        <img style="width:100%" src="/img/lunbotu/carousel-1.jpg">
+                                    </div>
+                                </div>
+
+                                <div style="position: absolute;top:2rem;right:-3rem;" id="ul-idxs"
+                                    class="col-2 p-0 m-0">
+                                    <span id="btn-left-indexlunbo"></span>
+                                    <!--虽然li个数比实际图片张数多1，但小圆点的个数不必多1-->
+                                    <div id="li-idxs p-0 m-0">
+                                        <div style="height: 260px;" id="li-qiehuan">
+                                            <img style="width:100%;height: 50px;" data-imglb="0" class="active"
+                                                src="/img/lunbotu/carousel-1.jpg">
+                                            <img style="width:100%;height: 50px;" data-imglb="1"
+                                                src="/img/lunbotu/carousel-2.jpg">
+                                            <img style="width:100%;height: 50px;" data-imglb="2"
+                                                src="/img/lunbotu/carousel-3.jpg">
+                                            <img style="width:100%;height: 50px;" data-imglb="3"
+                                                src="/img/lunbotu/carousel-4.jpg">
+                                        </div>
+                                    </div>
+                                    <span id="btn-right-indexlunbo"></span>
+                                </div>
+                            </div>
+*/

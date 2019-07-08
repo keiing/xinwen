@@ -265,11 +265,11 @@
                 <!-- 广告位 -->
                 <div class="bgf4f5f6 mt-3">
                     <div class="card-body p-2 border-bottom">
-                        <div id="demo3" class="carousel col-10 p-0 m-0" data-ride="carousel">
+                        <div id="demo3" class="col-12 p-0 m-0" data-ride="carousel">
                             <!-- 1.轮播图片-->
                             <div class="w-100 p-0 offset-1 m-0"></div>
                             <div id="main">
-                                <div id="banner">
+                                <div id="banner col-10 m-0 p-0" style="overflow: hidden">
                                     <div id="ul-imgs" class="transition" style="width:3000px; margin-left:0px;">
                                         <img src="/img/lunbotu/carousel-1.jpg">
                                         <img src="/img/lunbotu/carousel-2.jpg">
@@ -419,16 +419,16 @@
             <div class="bgf4f5f6 mt-3">
                 <div class="card-body font-size-3">
                     <p>&copy;2019 今日头条</p>
-<!--                     <p>中国互联网举报中心 京ICP证140141号</p> -->
-<!--                     <p> 京ICP备12025439号-3 网络文化经营许可证</p> -->
-<!--                     <p>营业执照</p> -->
-<!--                     <p>京-非经营性-2016-0081</p> -->
-<!--                     <p>互联网药品信息服务资格证书</p> -->
-<!--                     <p>跟帖评论自律管理承诺书</p> -->
-<!--                     <p>违法和不良信息举报：010-58341833</p> -->
-<!--                     <p>举报邮箱：jubao@toutiao.com</p> -->
-<!--                     <p>公司名称：北京字节跳动科技有限公司</p> -->
-<!--                     <p> 京公网安备 11000002002023号</p> -->
+                    <!--                     <p>中国互联网举报中心 京ICP证140141号</p> -->
+                    <!--                     <p> 京ICP备12025439号-3 网络文化经营许可证</p> -->
+                    <!--                     <p>营业执照</p> -->
+                    <!--                     <p>京-非经营性-2016-0081</p> -->
+                    <!--                     <p>互联网药品信息服务资格证书</p> -->
+                    <!--                     <p>跟帖评论自律管理承诺书</p> -->
+                    <!--                     <p>违法和不良信息举报：010-58341833</p> -->
+                    <!--                     <p>举报邮箱：jubao@toutiao.com</p> -->
+                    <!--                     <p>公司名称：北京字节跳动科技有限公司</p> -->
+                    <!--                     <p> 京公网安备 11000002002023号</p> -->
                 </div>
 
             </div>
@@ -588,7 +588,7 @@
             }
             // console.log(to, i)
             if (i == 0) {
-                if (to > i) {} else {
+                if (to > i) { } else {
                     ulImgs.style.marginLeft = -imgWidth * lilength + "px";
                     liQiehuan.style.marginTop = -30 * lilength + "px"
                     moveTo(lilength - 1);
@@ -616,7 +616,7 @@
             }
 
             if (i == 0) {
-                if (to > i) {} else {
+                if (to > i) { } else {
                     ulImgs.style.marginLeft = -imgWidth * lilength + "px";
                     moveTo(lilength - 1);
                     return;

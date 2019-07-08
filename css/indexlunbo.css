@@ -6,14 +6,15 @@
    #main {
        border: #999999 1px solid;
        position: relative;
-       width: 220px;
+       width: 269px;
        height: 220px;
-       margin: 0 auto;
+       /* margin: 0 auto; */
+       overflow: hidden;
        display: flex;
    }
 
    #banner {
-       width: 220px;
+       width:100%;
        height: 220px;
        overflow: hidden;
        position: relative;
@@ -118,7 +119,7 @@
    @media all and (min-width:851px) and (max-width:1220px) {
 
        #ul-idxs {
-           left: 12rem;
+           left: 14rem;
            /* width: 17rem; */
        }
 
