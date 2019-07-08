@@ -1,0 +1,31 @@
+.tabs{ list-style:none; padding:0;}
+.tabs span{
+  text-decoration:none;
+        color:#000;
+        padding:12px 22px;
+        display:inline-block;
+        margin:0px;
+        cursor:pointer;
+        height:50px;
+}
+.tabs>li{
+  float:left;
+  border-bottom:1px solid #000;
+}
+.tabs>.active{
+  border:1px solid #000;
+  border-bottom:0;
+  background-color:#fff;
+  border-radius:0.25rem;
+}
+.tabs>:hover{
+  background:#1eefea;
+  border-radius:0.25rem;
+}
+.dspl-none>div{
+  display:none;
+}
+.dspl-none>.active{
+  display:block;
+
+}

@@ -1,309 +1,731 @@
 <!doctype html>
 <html lang="en">
- <head>
-  <meta charset="UTF-8">
-  <meta name="Generator" content="EditPlus®">
-  <meta name="Author" content="">
-  <meta name="Keywords" content="">
-  <meta name="Description" content="">
-  <title>Document</title>
-	 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-	  <link rel="stylesheet" href="css/bootstrap.css">
-     <script src='js/jquery.min.js'></script>
-     <script src='js/popper.min.js'></script>
-     <script src='js/bootstrap.min.js'></script>
-     <script src="js/index.js"></script>
-     <script src="js/sousuo.js"></script>
-     <link rel="stylesheet" href="css/index.css"/>
-     <link rel="stylesheet" href="css/coms.css"/>
- </head>
- <iframe src="header.html" frameborder="0" width='100%' scrolling='no' class="header"></iframe>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src='js/jquery.min.js'></script>
+    <script src='js/popper.min.js'></script>
+    <script src='js/bootstrap.min.js'></script>
+    <script src="js/index.js"></script>
+    <script src="js/sousuo.js"></script>
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/coms.css" />
+    <!-- <link rel="stylesheet" href="header.css"> -->
+    <!-- <script src="header.js"></script> -->
+    <link rel="stylesheet" href="js/tabs/tabs.css">
+    <script src="js/tabs/tabs.js"></script>
+    <link rel="stylesheet" href="./css/indexlunbo.css">
 
 
 
- <body onload="getms()">
+</head>
+<!-- <iframe src="header.html" frameborder="0" width='100%' scrolling='no' class="header"></iframe> -->
+
+<body>
+    <div id="app">
+        <my-header :mydate="mydate"></my-header>
+    </div>
+
     <div class="row m-0 p-0">
         <!-- 左侧导航按钮 -->
         <div class="col-lg-2 col-md-12">
-        <div class="position-fixed-fixed">
-            <ul class="m-0 p-0 list-unstyled">
-            <li><a href=""><img src="img/header/search.png" class="ml-0"></a></li>
-            </ul>
-            <ul class="navbar-brand nav pt-1 list-unstyled btn-group-vertical nav-pills mt-0 justify-content-around">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#my_tab_1" data-toggle="pill">推荐</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#my_tab_2" data-toggle="pill">阳光宽带</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#my_tab_3" data-toggle="pill">热点</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#my_tab_4" data-toggle="pill">直播</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#my_tab_5" data-toggle="pill">图片</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#my_tab_6" data-toggle="pill">科技</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#my_tab_7" data-toggle="pill">娱乐</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#my_tab_8" data-toggle="pill">游戏</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#my_tab_9" data-toggle="pill">体育</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#my_tab_10" data-toggle="pill">汽车</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#my_tab_11" data-toggle="pill">财经</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#my_tab_12" data-toggle="pill">
-                    <button onclick="get_js()" class="w-100 border-0 bg-transparent" id="button">
-                        军事
-                    </button></a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link" data-toggle="dropdown">更多</a>
-                    <ul class="dropdown-menu justify-content-around text-center" >
-                        <li class="nav-item">
-                            <button onclick="get_gx()"><a class="nav-link float-left w-100" href="http://127.0.0.1:8080/indexgx.html" target="_blank">搞笑</a></button>
-                            <button onclick="get_gj()"><a class="nav-link float-right w-100" href="http://127.0.0.1:8080/indexgj.html" target="_blank">国际</a></button>
-                        </li>
-                        <li class="nav-item">
-                            <button onclick="get_sx()"><a class="nav-link float-left w-100" href="http://127.0.0.1:8080/indexsx.html" data-toggle="pill" target="_blank">时尚</a></button>
-                            <button onclick="get_ly()"><a class="nav-link float-right w-100" href="http://127.0.0.1:8080/indexly.html" data-toggle="pill" target="_blank">旅游</a></button>
-                        </li>
-                        <li class="nav-item">
-                            <button onclick="get_ts()"><a class="nav-link float-left w-100" href="http://127.0.0.1:8080/indexts.html" data-toggle="pill" target="_blank">探索</a></button>
-                            <button onclick="get_ye()"><a class="nav-link float-right w-100" href="http://127.0.0.1:8080/indexye.html" data-toggle="pill" target="_blank">育儿</a></button>
-                        </li>
-                        <li class="nav-item">
-                            <button onclick="get_ys()"><a class="nav-link float-left w-100" href="http://127.0.0.1:8080/indexys.html" data-toggle="pill" target="_blank">养生</a></button>
-                            <button onclick="get_mw()"><a class="nav-link float-right w-100" href="http://127.0.0.1:8080/index.html#my_tab_13" data-toggle="pill" target="_blank">美文</a></button>
-                        </li>
-                        <li class="nav-item">
-                            <button onclick="get_ls()"><a class="nav-link float-left w-100" href="http://127.0.0.1:8080/indexls.html" data-toggle="pill" target="_blank">历史</a></button>
-                            <button onclick="get_ms()"><a class="nav-link float-right w-100" href="http://127.0.0.1:8080/indexms.html" data-toggle="pill" target="_blank">美食</a></button>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+            <div class="position-fixed-fixed">
+                <ul class="m-0 p-0 list-unstyled">
+                    <li><a href=""><img src="img/header/search.png" class="ml-0 aimg"></a></li>
+                </ul>
+                <ul id="gengduo"
+                    class="navbar-brand nav pt-1 list-unstyled btn-group-vertical nav-pills mt-0 justify-content-around">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#my_tab_1" onclick="get_index('tj','my_tab_1')"
+                            data-toggle="pill">推荐</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#my_tab_2" onclick="get_index('kd','my_tab_2')"
+                            data-toggle="pill">阳光宽带</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#my_tab_3" onclick="get_index('redian','my_tab_3')"
+                            data-toggle="pill">热点</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#my_tab_4" onclick="get_index('zb','my_tab_4')"
+                            data-toggle="pill">直播</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="get_index('tp','my_tab_5')" href="#my_tab_5"
+                            data-toggle="pill">图片</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="get_index('kj','my_tab_6')" href="#my_tab_6"
+                            data-toggle="pill">科技</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="get_index('yl','my_tab_7')" href="#my_tab_7"
+                            data-toggle="pill">娱乐</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="get_index('yx','my_tab_8')" href="#my_tab_8"
+                            data-toggle="pill">游戏</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="get_index('ty','my_tab_9')" href="#my_tab_9"
+                            data-toggle="pill">体育</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="get_index('qc','my_tab_10')" href="#my_tab_10"
+                            data-toggle="pill">汽车</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="get_index('cj','my_tab_11')" href="#my_tab_11"
+                            data-toggle="pill">财经</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="gengduo1" href="#my_tab_12" onclick="get_index('js','my_tab_12')"
+                            data-toggle="pill">
+                            军事</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle nav-link" data-toggle="dropdown">更多</a>
+                        <ul class="dropdown-menu justify-content-around text-center row m-0 p-0" id="gengduo2">
+                            <li class="nav-item col-12 m-0 p-0">
+                                <a onclick="get_index('gx','my_tab_12')" class="nav-link float-left w-50"
+                                    href="#my_tab_12">搞笑</a>
+                                <a onclick="get_index('gj','my_tab_12')" class="nav-link float-right w-50"
+                                    href="#my_tab_12">国际</a>
+                            </li>
+                            <li class="nav-item col-12 m-0 p-0">
+                                <a onclick="get_index('ss','my_tab_12')" class="nav-link float-left w-50"
+                                    href="#my_tab_12">时尚</a>
+                                <a onclick="get_index('ly','my_tab_12')" class="nav-link float-right w-50"
+                                    href="#my_tab_12">旅游</a>
+                            </li>
+                            <li class="nav-item col-12 m-0 p-0">
+                                <a onclick="get_index('ts','my_tab_12')" class="nav-link float-left w-50"
+                                    href="#my_tab_12">探索</a>
+                                <a onclick="get_index('ye','my_tab_12')" class="nav-link float-right w-50"
+                                    href="#my_tab_12">育儿</a>
+                            </li>
+                            <li class="nav-item col-12 m-0 p-0">
+                                <a onclick="get_index('ys','my_tab_12')" class="nav-link float-left w-50"
+                                    href="#my_tab_12">养生</a>
+                                <a onclick="get_index('mw','my_tab_12')" class="nav-link float-right w-50"
+                                    href="#my_tab_12">美文</a>
+                            </li>
+                            <li class="nav-item col-12 m-0 p-0">
+                                <a onclick="get_index('ls','my_tab_12')" class="nav-link float-left w-50"
+                                    href="#my_tab_12">历史</a>
+                                <a onclick="get_index('ms','my_tab_12')" class="nav-link float-right w-50"
+                                    href="#my_tab_12">美食</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-            </div>
-            <div class="col-lg-7 col-md-12 tab-content">
-                <div id="my_tab_1" class="tab-pane active">
-                    <ul id="my_title1" class="">
-                    <!--内容区域 1-->
-                    </ul>
-                </div>
-                <div id="my_tab_2" class="tab-pane">
-                    <ul id="my_title2" class="">
-                        <!--内容区域 2-->
-                    </ul>
-                </div>
-                <div id="my_tab_3" class="tab-pane">
-                    <ul id="my_title3" class="">
-                        <!--内容区域 3-->
-                    </ul>
-                </div>
-                <div id="my_tab_4" class="tab-pane">
-                    <ul id="my_title4" class="">
-                        <!--内容区域 4-->
-                    </ul>
-                </div>
-                <div id="my_tab_5" class="tab-pane">
-                    <ul id="my_title5" class="">
-                        <!--内容区域 5-->
-                    </ul>
-                </div>
-                <div id="my_tab_6" class="tab-pane">
-                    <ul id="my_title6" class="">
-                        <!--内容区域 6-->
-                    </ul>
-                </div>
-                <div id="my_tab_7" class="tab-pane">
-                    <ul id="my_title7" class="">
-
-                    </ul>
-                </div>
-                <div id="my_tab_8" class="tab-pane">
-                    <ul id="my_title8" class="">
-
-                    </ul>
-                </div>
-                <div id="my_tab_9" class="tab-pane">
-                    <ul id="my_title9" class="">
-
-                    </ul>
-                </div>
-                <div id="my_tab_10" class="tab-pane">
-                    <ul id="my_title10" class="">
-
-                    </ul>
-                </div>
-                <div id="my_tab_11" class="tab-pane">
-                    <ul id="my_title11" class="">
-
-                    </ul>
-                </div>
-                <div id="my_tab_12" class="tab-pane">
-                    <ul id="my_title12" class="">
-
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-12 position-relative m-0 p-0">
-                <div class="position-relative-sousuo w-100">
-                    <input type="text" class="input-group input-group-te" id="title" placeholder="请输入要搜索的内容"/>
-
-                    <button class="btn btn-group-lg bg-info position-absolute button-getmss px-4" onclick="getmss()">搜索</button>
-                    <!--<button class="m-0 p-0 btn position-absolute button-getmss" onclick="getmss()"><img src="img/header/search2.png"/></button>-->
-                </div>
-                <div class="card mt-2 border-0">
-                    <div class="bgf4f5f6">
-                        <div class="card-body m-3 bg-white text-center">
-                            <h6 class="font-size-3">登录后可以保存您的浏览喜好、评论、收藏，并与APP同步更可以发布微头条</h6>
-                            <button type="text" class="btn btn-group-lg bg-danger w-100">登录</button>
-                            <div class="d-flex justify-content-center">
-                                <a class="mx-2" href=""><embed src="img/header/qq_icon.svg" type=""/></a>
-                                <a class="mx-2" href=""><embed src="img/header/wx_icon.svg" type=""/></a>
+        </div>
+        <div class="col-lg-7 col-md-12 tab-content">
+            <!--<div>发布图片，发布视频，发布问题</div>-->
+            <div class=" mb-0 pb-0">
+                <div class="row p-0 m-0">
+                    <div class="col-12 border-radius bg-info p-0 m-0">
+                        <ul id="nav-bar">
+                            <li class="active">
+                                <span nav-tab="nav" nav-ids="input1">
+                                    发布图片
+                                </span>
+                            </li>
+                            <li>
+                                <span nav-tab="nav" nav-ids="input2">
+                                    发布视频
+                                </span>
+                            </li>
+                            <li>
+                                <span nav-tab="nav" nav-ids="input3">
+                                    发布问答
+                                </span>
+                            </li>
+                        </ul>
+                        <div id="navi-bar" class="row w-100 mx-0">
+                            <div class="active col-12 px-0 mx-0" id="input1">
+                                <textarea id='details' class="w-100" list='details_list' required='required'
+                                    placeholder="有什么新鲜事想告诉大家"></textarea>
+                                <div class="">
+                                    <input type="file" id="pic" accept="image/gif, image/jpeg" class="" />
+                                    <input type="checkbox" />发布长文
+                                    表情
+                                    <button class="btn btn-danger float-right" onclick="get_fa_bu()">发布</button>
+                                </div>
+                            </div>
+                            <div class="tab-pane col-12 px-0 mx-0" id="input2">
+                                <textarea rows="5" class="p-0 m-0 w-100" id='details2' list='details_list'
+                                    required='required' placeholder="视频标题(30字以内)"></textarea>
+                                添加视频<input type="file" id="video" />
+                                <button class="btn btn-danger right-right float-right">发布</button>
+                            </div>
+                            <div class="tab-pane" id="input3">
+                                <input class="input-group-lg w-100 p-1" type="text" placeholder="请输入问题标题(4-40字)" />
+                                <textarea rows="3" class="w-100" id='details2' list='details_list' required='required'
+                                    placeholder="添加问题背景描述（选填,0-40字）"></textarea>
+                                添加图片<input type="file" id="pic2" accept="image/gif,image/jpeg"
+                                    class="btn btn-group-sm" />
+                                <a href="">更多问答</a>
+                                <button class="btn btn-danger float-right">发布</button>
                             </div>
                         </div>
-
                     </div>
-                    <!-- 淘宝轮播图-->
+                </div>
+            </div>
+            <!-- -->
+            <div id="my_tab_1" class="tab-pane active">
+                <ul id="my_title1" class="">
+                    <!--内容区域 1-->
+                </ul>
+            </div>
+            <div id="my_tab_2" class="tab-pane">
+                <ul id="my_title2" class="">
+                    <!--内容区域 2-->
+                </ul>
+            </div>
+            <div id="my_tab_3" class="tab-pane">
+                <ul id="my_title3" class="">
+                    <!--内容区域 3-->
+                </ul>
+            </div>
+            <div id="my_tab_4" class="tab-pane">
+                <ul id="my_title4" class="">
+                    <!--内容区域 4-->
+                </ul>
+            </div>
+            <div id="my_tab_5" class="tab-pane">
+                <ul id="my_title5" class="">
+                    <!--内容区域 5-->
+                </ul>
+            </div>
+            <div id="my_tab_6" class="tab-pane">
+                <ul id="my_title6" class="">
+                    <!--内容区域 6-->
+                </ul>
+            </div>
+            <div id="my_tab_7" class="tab-pane">
+                <ul id="my_title7" class="">
+
+                </ul>
+            </div>
+            <div id="my_tab_8" class="tab-pane">
+                <ul id="my_title8" class="">
+
+                </ul>
+            </div>
+            <div id="my_tab_9" class="tab-pane">
+                <ul id="my_title9" class="">
+
+                </ul>
+            </div>
+            <div id="my_tab_10" class="tab-pane">
+                <ul id="my_title10" class="">
+
+                </ul>
+            </div>
+            <div id="my_tab_11" class="tab-pane">
+                <ul id="my_title11" class="">
+
+                </ul>
+            </div>
+            <div id="my_tab_12" class="tab-pane">
+                <ul id="my_title12" class="">
+
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-12 position-relative m-0 p-0">
+            <div class="position-relative-sousuo w-100">
+                <input type="text" class="input-group input-group-te" id="title" placeholder="请输入要搜索的内容" />
+
+                <button class="btn btn-group-lg bg-info position-absolute button-getmss px-4"
+                    onclick="getmss()">搜索</button>
+                <!--<button class="m-0 p-0 btn position-absolute button-getmss" onclick="getmss()"><img src="img/header/search2.png"/></button>-->
+            </div>
+            <div class="card mt-2 border-0">
+                <div class="bgf4f5f6" id="denglu">
+                    <div class="card-body m-3 bg-white text-center">
+                        <h6 class="font-size-3">登录后可以保存您的浏览喜好、评论、收藏，并与APP同步更可以发布微头条</h6>
+                        <a href="http://127.0.0.1:5500/login.html" class="btn btn-danger">登录</a>
+
+                        <div class="d-flex justify-content-center">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 广告位 -->
+                <div class="bgf4f5f6 mt-3">
+                    <div class="card-body p-2 border-bottom">
+                        <div id="demo3" class="carousel col-10 p-0 m-0" data-ride="carousel">
+                            <!-- 1.轮播图片-->
+                            <div class="w-100 p-0 offset-1 m-0"></div>
+                            <div id="main">
+                                <div id="banner">
+                                    <div id="ul-imgs" class="transition" style="width:3000px; margin-left:0px;">
+                                        <img src="/img/lunbotu/carousel-1.jpg">
+                                        <img src="/img/lunbotu/carousel-2.jpg">
+                                        <img src="/img/lunbotu/carousel-3.jpg">
+                                        <img src="/img/lunbotu/carousel-4.jpg">
+                                        <!--注意！最后li个数要比实际图片张数多1，最后一个li里的img是重复第一张li的图片-->
+                                        <img src="/img/lunbotu/carousel-1.jpg">
+                                    </div>
+                                </div>
+                                <div id="ul-idxs">
+                                    <span id="btn-left-indexlunbo"></span>
+                                    <!--虽然li个数比实际图片张数多1，但小圆点的个数不必多1-->
+                                    <div id="li-idxs">
+                                        <div id="li-qiehuan">
+                                            <img data-imglb="0" class="active" src="/img/lunbotu/carousel-1.jpg">
+                                            <img data-imglb="1" src="/img/lunbotu/carousel-2.jpg">
+                                            <img data-imglb="2" src="/img/lunbotu/carousel-3.jpg">
+                                            <img data-imglb="3" src="/img/lunbotu/carousel-4.jpg">
+                                        </div>
+                                    </div>
+                                    <span id="btn-right-indexlunbo"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 3.轮播指示符-->
+                    </div>
+
+
+                </div>
+                <!-- 淘宝轮播图
                     <div class="bgf4f5f6 mt-3">
                         <div class="card-body my-3 mx-2">
                             <img src="" alt=""/>
                         </div>
-                    </div>
-                    <!-- 24小时热闻-->
-                    <div class="bgf4f5f6 mt-3">
-                        <div class="card-body">
-                            <h5 class="font-weight-bold">24小时热闻</h5>
-                            <div>
-                                <ul>
+                    </div> -->
+                <!-- 24小时热闻-->
+                <div class="bgf4f5f6 mt-3">
+                    <div class="card-body pb-0">
+                        <h5 class="font-weight-bold">24小时热闻</h5>
+                        <ul class="list-unstyled text-none row" id="rewen">
 
-                                </ul>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <!-- 广告位轮播图2-->
+                <div class="bgf4f5f6 mt-3">
+                    <div class="card-body">
+                        <div id="demo4" class="carousel col-10 p-0 m-0" data-ride="carousel">
+                            <!-- 1.轮播图片-->
+                            <div class="carousel-inner w-100 p-0 m-0">
+
                             </div>
                         </div>
-                    </div>
-
-                    <!-- 广告位-->
-                    <div class="bgf4f5f6 mt-3">
-                        <div class="card-body">
+                        <!-- 3.轮播指示符-->
+                        <div class="col-2 bg-dark p-0 m-0">
 
                         </div>
                     </div>
-                    <!-- 广告位轮播图2-->
-                    <div class="bgf4f5f6 mt-3">
-                        <div class="card-body">
-
-                        </div>
-                    </div>
-                    <!-- 精彩图片-->
-                    <div class="bgf4f5f6 mt-3">
-                        <div class="card-body">
-                            <h5 class="font-weight-bold">精彩图片</h5>
-                        </div>
-                    </div>
-                    <!-- 更多-->
-                    <div class="bgf4f5f6 mt-3 border-top border-danger">
-                        <div class="card-body">
-                            <h5 class="font-weight-bold">更多</h5>
-                            <div class="font-size-3 text-justify" id="gdabq">
-                                <a href="">关于头条</a>
-                                <a href="">加入头条</a>
-                                <a href="">媒体报道</a>
-                                <a href="">媒体合作</a>
-                                <a href="">产品合作</a>
-                                <a href="">合作说明</a>
-                                <a href="">广告投放</a>
-                                <a href="">联系我们</a>
-                                <a href="">用户协议</a>
-                                <a href="">隐私政策</a>
-                                <a href="">侵权投诉</a>
-                                <a href="">廉洁举报</a>
-                                <a href="">企业认证</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bgf4f5f6 mt-3 border-top border-danger p-3">
-                        <h5 class="font-weight-bold">友情链接</h5>
-                        <div class="font-size-3 text-justify" id="gdabq">
-                            <a href="">光明网</a>
-                            <a href="">央广网</a>
-                            <a href="">国际在线</a>
-                            <a href="">中国西藏网</a>
-                            <a href="">参考消息</a>
-                            <a href="">环球网</a>
-                            <a href="">中青在线</a>
-                            <a href="">中青网</a>
-                            <a href="">海外网</a>
-                            <a href="">中国网</a>
-                            <a href="">未来网</a>
-                            <a href="">千龙网</a>
-                            <a href="">新京报</a>
-                            <a href="">北青网</a>
-                            <a href="">法制晚报</a>
-                            <a href="">北京晨报</a>
-                            <a href="">北京商报</a>
-                            <a href="">北京娱乐信报</a>
-                            <a href="">奥一网</a>
-                            <a href="">金羊网</a>
-                            <a href="">华商网</a>
-                            <a href="">新民网</a>
-                            <a href="">红网</a>
-                            <a href="">中国江苏网</a>
-                            <a href="">中国江西网</a>
-                            <a href="">齐鲁网</a>
-                            <a href="">南海网</a>
-                            <a href="">安徽网</a>
-                            <a href="">河北新闻网</a>
-                            <a href="">闽南网</a>
-                            <a href="">海峡网</a>
-                            <a href="">华声在线</a>
-                            <a href="">中国蓝TV</a>
-                            <a href="">北国网</a>
-                            <a href="">龙虎网</a>
-                            <a href="">东莞时间网</a>
-                            <a href="">汽车之家</a>
-                            <a href="">Onlylady女人志</a>
-                            <a href="">中国搜索</a>
-                            <a href="">每日经济新闻</a>
-                            <a href="">网上车市</a>
-                            <a href="">网通社汽车</a>
-                            <a href="">北方网</a>
-                            <a href="">湖南省旅发委官网</a>
-                            <a href="">乐居网</a>
-                        </div>
-                    </div>
-                    <!-- 版权-->
-                    <div class="bgf4f5f6 mt-3">
-                        <div class="card-body font-size-3">
-                            <p>&copy;2019 今日头条</p>
-                            <p>中国互联网举报中心 京ICP证140141号</p>
-                            <p> 京ICP备12025439号-3 网络文化经营许可证</p>
-                            <p>营业执照</p>
-                            <p>京-非经营性-2016-0081</p>
-                            <p>互联网药品信息服务资格证书</p>
-                            <p>跟帖评论自律管理承诺书</p>
-                            <p>违法和不良信息举报：010-58341833</p>
-                            <p>举报邮箱：jubao@toutiao.com</p>
-                            <p>公司名称：北京字节跳动科技有限公司</p>
-                            <p> 京公网安备 11000002002023号</p>
-                        </div>
-
+                </div>
+                <!-- 精彩图片-->
+                <div class="bgf4f5f6 mt-3">
+                    <div class="card-body">
+                        <h5 class="font-weight-bold">精彩图片</h5>
+                        <!-- <div class="w-100">
+                            <ul class="modal-open h-200">
+                                <li>
+                                    <img class="w-100" src="img/product/lg/57e1ff09Nf610fea3.jpg" />
+                                </li>
+                            </ul> -->
                     </div>
                 </div>
             </div>
+            <!-- 更多-->
+            <div class="bgf4f5f6 mt-3 border-top border-danger">
+                <div class="card-body">
+                    <h5 class="font-weight-bold">更多</h5>
+                    <div class="font-size-3 text-justify" id="gdabq">
+                        <a href="">关于头条</a>
+                        <a href="">加入头条</a>
+                        <a href="">媒体报道</a>
+                        <a href="">媒体合作</a>
+                        <a href="">产品合作</a>
+                        <a href="">合作说明</a>
+                        <a href="">广告投放</a>
+                        <a href="">联系我们</a>
+                        <a href="">用户协议</a>
+                        <a href="">隐私政策</a>
+                        <a href="">侵权投诉</a>
+                        <a href="">廉洁举报</a>
+                        <a href="">企业认证</a>
+                    </div>
+                </div>
+            </div>
+            <div class="bgf4f5f6 mt-3 border-top border-danger p-3">
+                <h5 class="font-weight-bold">友情链接</h5>
+                <div class="font-size-3 text-justify" id="gdabq">
+                    <a href="">光明网</a>
+                    <a href="">央广网</a>
+                    <a href="">国际在线</a>
+                    <a href="">中国西藏网</a>
+                    <a href="">参考消息</a>
+                    <a href="">环球网</a>
+                    <a href="">中青在线</a>
+                    <a href="">中青网</a>
+                    <a href="">海外网</a>
+                    <a href="">中国网</a>
+                    <a href="">未来网</a>
+                    <a href="">千龙网</a>
+                    <a href="">新京报</a>
+                    <a href="">北青网</a>
+                    <a href="">法制晚报</a>
+                    <a href="">北京晨报</a>
+                    <a href="">北京商报</a>
+                    <a href="">北京娱乐信报</a>
+                    <a href="">奥一网</a>
+                    <a href="">金羊网</a>
+                    <a href="">华商网</a>
+                    <a href="">新民网</a>
+                    <a href="">红网</a>
+                    <a href="">中国江苏网</a>
+                    <a href="">中国江西网</a>
+                    <a href="">齐鲁网</a>
+                    <a href="">南海网</a>
+                    <a href="">安徽网</a>
+                    <a href="">河北新闻网</a>
+                    <a href="">闽南网</a>
+                    <a href="">海峡网</a>
+                    <a href="">华声在线</a>
+                    <a href="">中国蓝TV</a>
+                    <a href="">北国网</a>
+                    <a href="">龙虎网</a>
+                    <a href="">东莞时间网</a>
+                    <a href="">汽车之家</a>
+                    <a href="">Onlylady女人志</a>
+                    <a href="">中国搜索</a>
+                    <a href="">每日经济新闻</a>
+                    <a href="">网上车市</a>
+                    <a href="">网通社汽车</a>
+                    <a href="">北方网</a>
+                    <a href="">湖南省旅发委官网</a>
+                    <a href="">乐居网</a>
+                </div>
+            </div>
+            <!-- 版权-->
+            <div class="bgf4f5f6 mt-3">
+                <div class="card-body font-size-3">
+                    <p>&copy;2019 今日头条</p>
+<!--                     <p>中国互联网举报中心 京ICP证140141号</p> -->
+<!--                     <p> 京ICP备12025439号-3 网络文化经营许可证</p> -->
+<!--                     <p>营业执照</p> -->
+<!--                     <p>京-非经营性-2016-0081</p> -->
+<!--                     <p>互联网药品信息服务资格证书</p> -->
+<!--                     <p>跟帖评论自律管理承诺书</p> -->
+<!--                     <p>违法和不良信息举报：010-58341833</p> -->
+<!--                     <p>举报邮箱：jubao@toutiao.com</p> -->
+<!--                     <p>公司名称：北京字节跳动科技有限公司</p> -->
+<!--                     <p> 京公网安备 11000002002023号</p> -->
+                </div>
+
+            </div>
         </div>
+    </div>
+    </div>
+
+    <script>
+        $(function () {
+
+            $("#nav-bar").Navbar();
+            $("#navi-bar").Navibar();
+
+            var url = "http://127.0.0.1:3000/register"
+            var datas = sessionStorage.getItem("data");
+            if (datas) {
+                $.ajax({
+                    url: "http://127.0.0.1:3000/islonguser",
+                    type: "post",
+                    xhrFields: {
+                        withCredentials: true
+                    },
+                    crossDomain: true,
+                    success: function (result) {
+                        if (result.code !== 200) {
+                            alert("请重新登录")
+                            sessionStorage.clear();
+                            history.go();
+                        }
+                    }
+                })
+            }
+            if (datas) {
+                datas = JSON.parse(datas);
+                var denglv = document.getElementById("denglu")
+                var dong = document.createElement("div");
+                dong.innerHTML = `
+                <div id="huanyinghuilai">
+                <h3 style="text-align:center;">欢迎回来</h3>
+                <div style="display:flex;justify-content:center;align-items:center;">
+                    <img style="height:100%;width:100px;border-radius:50%;" id="fileidsrcimg" src=${datas.xw_img} />
+                    <h2>${datas.xw_uname}</h2>
+                    </div>
+                    <div id="motaikuang">
+                        <button id="tuichuchenglu">退出登录</button>
+                        <button id="denglushezhi">设置</button>
+                        <button>浏览记录</button>
+                    </div>
+                    <div id="inputImgFile">
+                    上传头像
+                        <input type="file" id="inputImgFiles">
+                        <br/><br/>
+                    更改名称
+                        <input type="text">
+                        <button id="inputImgFilebutton">提交</button>
+                        <br/><br/>
+                    <button>修改密码</button>
+                    </div>
+                    </div> `
+                denglv.parentNode.replaceChild(dong, denglv)
+            }
+            var huanying = document.getElementById("huanyinghuilai")
+            $("#huanyinghuilai").hover(
+                function () {
+                    $("#motaikuang").css({
+                        "display": "block"
+                    })
+                },
+                function () {
+                    $("#motaikuang").css({
+                        "display": "none"
+                    })
+                }
+            )
+            $("#tuichuchenglu").on("click", function () {
+                sessionStorage.clear();
+                $.ajax({
+                    url: "http://127.0.0.1:3000/loginout",
+                    type: "post",
+                    success: function (result) {
+                        alert(result.msg)
+                        history.go();
+                    }
+                })
+            })
+
+            $("#denglushezhi").on("click", function () {
+                $("#inputImgFile").toggle();
+            });
+            $("#inputImgFile").hover(function () {
+
+            }, function () {
+                $("#inputImgFile").toggle();
+            })
+            $("#inputImgFilebutton").on("click", function () {
+                var formData = new FormData();
+                // console.log(e.target);
+                formData.append("file", $("#inputImgFiles")[0].files[0]);
+                //需要在formdata中通过append方法，添加内容到虚拟form标签中，
+                //这样虚拟form中才有虚拟input type=file ，而file的内容是event.target.files[0]二进制数据流。
+                if ($("#inputImgFiles")[0].files[0] !== undefined) {
+
+                    $.ajax({
+                        url: "http://127.0.0.1:3000/userava",
+                        type: "post",
+                        data: formData,
+                        /*必须false才会自动加上正确的Content-Type*/
+                        contentType: false,
+                        /*  必须false才会避开jQuery对 formdata 的默认处理
+                          XMLHttpRequest会对 formdata 进行正确的处理 */
+                        processData: false,
+                        xhrFields: {
+                            withCredentials: true
+                        },
+                        crossDomain: true,
+                        success: function (result) {
+                            $("#fileidsrcimg").attr("src", result.data)
+                            alert(result.msg);
+                        }
+                    })
+                }
+                // console.log(params);
+                // $("#fileidsrcimg")
+            })
+        });
+    </script>
+    <!-- <script>
+        var ve = new Vue({
+            el: "#app",
+            data: {
+                mydate: new Date().toLocaleTimeString()
+            },
+            methods: {}
+        })
+        setInterval(function () {
+            ve.mydate = new Date().toLocaleTimeString()
+        }, 1000);
+    </script> -->
+    <script src="js/indexgd.js"></script>
+    <script src="js/delete.js"></script>
+    <script>
+        //获得img宽度
+        var i = 0;
+        var imgWidth = document.querySelector("#ul-imgs>img").clientWidth + 4;
+        var liCount = document.querySelectorAll("#li-idxs>#li-qiehuan>img");
+        //获取对应小图片数量
+        var lilength = liCount.length;
+        //获得需要移动的left的父元素
+        var ulImgs = document.getElementById("ul-imgs");
+        var liQiehuan = document.getElementById("li-qiehuan");
+        // console.log(ulImgs)
+
+        function moveo(to) {
+            console.log(typeof (to), typeof (i))
+            if (to == undefined) {
+                Number(to) = eval(Number(i) + 1);
+            }
+            // console.log(to, i)
+            if (i == 0) {
+                if (to > i) {} else {
+                    ulImgs.style.marginLeft = -imgWidth * lilength + "px";
+                    liQiehuan.style.marginTop = -30 * lilength + "px"
+                    moveTo(lilength - 1);
+                    return;
+                }
+            }
+            i = Number(to);
+            ulImgs.style.marginLeft = -i * imgWidth + "px";
+            liQiehuan.style.marginTop = -30 * i + "px"
+            if (i == lilength) {
+                i = 0;
+                ulImgs.style.marginLeft = 0;
+                liQiehuan.style.marginTop = 0;
+            }
+            for (var li of liCount) {
+                li.className = ""
+            }
+            liCount[i].className = "active";
+        }
+
+        function moveTo(to) {
+            console.log(typeof (to), typeof (i))
+            if (to == undefined) {
+                Number(to) = eval(i + 1);
+            }
+
+            if (i == 0) {
+                if (to > i) {} else {
+                    ulImgs.style.marginLeft = -imgWidth * lilength + "px";
+                    moveTo(lilength - 1);
+                    return;
+                }
+            }
+            i = Number(to);
+            ulImgs.style.marginLeft = -i * imgWidth + "px";
+            if (i == lilength) {
+                i = 0;
+                ulImgs.style.marginLeft = 0;
+            }
+            for (var li of liCount) {
+                li.className = ""
+            }
+            liCount[i].className = "active";
+        }
+
+        function move(n) {
+            moveo(i + Number(n)); //才调用真正移动ul的方法
+        }
+        var btnLeft = document.getElementById("btn-left-indexlunbo");
+        var btnRight = document.getElementById("btn-right-indexlunbo");
+        btnLeft.onclick = function () {
+            move(-1);
+        }
+        btnRight.onclick = function () {
+            move(1)
+        }
+        liQiehuan.onmouseover = function (e) {
+            if (event.target.nodeName == "IMG") {
+                console.log(event.target.nodeName)
+                var lisen = e.target.getAttribute("data-imglb");
+                moveTo(lisen)
+            }
+        }
+    </script>
+    <script src="./js/indexnotlogin.js">
+    </script>
 </body>
+<style>
+    .col-lg-7.col-md-12.tab-content ul {
+        min-width: 630px;
+    }
+
+    .col-12.border-radius.bg-info.p-0.m-0 {
+        min-width: 513px;
+    }
+
+    @media screen and (max-width:720px) {
+        #gengduo.navbar-brand.nav.pt-1.list-unstyled.btn-group-vertical.nav-pills.mt-0.justify-content-around {
+            min-width: 513px;
+        }
+
+        #huanyinghuilai,
+        #denglu {
+            position: fixed;
+            top: 140px;
+            left: 0px;
+        }
+
+        #denglu {
+            /* width: 100px !important; */
+            height: 0px;
+        }
+
+        #denglu>.card-body.m-3.bg-white.text-center {
+            height: 0px;
+            position: absolute;
+            top: -219px;
+            left: 10px;
+        }
+    }
+
+    .col-lg-3.col-md-12.position-relative.m-0.p-0 {
+        min-width: 240px;
+    }
+
+    #motaikuang {
+        display: none;
+        background-color: #fff;
+        /* height: 200px; */
+    }
+
+    #motaikuang button {
+        height: 50px;
+        width: 100%;
+    }
+
+    #motaikuang button:active {
+        background-color: #f00;
+    }
+
+    #inputImgFile {
+        position: relative;
+        top: 10px;
+        /* left: 10%; */
+        width: 300px;
+        height: 500px;
+        background: #000;
+        color: #fff;
+        z-index: 10;
+        font-size: 17px;
+        display: none;
+    }
+
+    #inputImgFile>button {
+        width: 100%;
+        height: 40px;
+    }
+</style>
+
 </html>

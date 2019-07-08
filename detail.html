@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src='js/jquery.min.js'></script>
+    <script src='js/popper.min.js'></script>
+    <script src='js/bootstrap.min.js'></script>
+    <link rel="stylesheet" href="css/coms.css" />
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/indexlunbo.css">
+
+
+</head>
+<iframe src="header.html" frameborder="0" width='100%' scrolling='no' class="header"></iframe>
+
+<body onload="chakan()">
+    <div class="container">
+
+        <input type="hidden" value="tj" id='translate'>
+        <div class="row">
+            <div class="col-lg-2 col-md-12 mr-0 pr-0">
+                <ul class="nav navbar mr-0 pr-0">
+                    <li class="nav-item">
+                        <a class="border-bottom border-dark nav-link" href="">
+                            <img class="w-50" src="img/login/mes.png" alt="" /></a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href=""><img src="img/login/fenxiang.png" alt="" />转发</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href=""><img src="img/login/xinliang.png" alt="" />微博</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href=""><img src="img/login/kognjian.png" alt="" />Qzone</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href=""><img src="img/login/weixin.png" alt="" />微信</a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col-lg-7 col-md-12 ml-0 pl-0">
+                <div>
+                    <h2 id="my_title"></h2>
+                </div>
+                <div class="d-flex">
+                    <p class="" id="my_Source_picture"></p>
+                    <h6 class="mr-1" id="my_source"></h6>
+                    <h6 class="mx-1" id="my_comment"></h6>
+                    <h6 class="mx-1" id="my_Release_time"></h6>
+                </div>
+                <div class="d-flex justify-content-around" id="my_pic"></div>
+                <div id="my_details"></div>
+                <!-- 评论区域 -->
+                <div id="my_seq_recommended">
+
+
+
+                </div>
+                <h3 class="mt-5">相关推荐</h3>
+                <div id="my_title1"></div>
+            </div>
+            <div class="col-lg-3 col-md-12 position-relative mt-2 p-0">
+                <div class="row">
+                    <div class="position-relative-sousuo w-100">
+                        <input type="text" class="input-group input-group-te" id="title" placeholder="请输入要搜索的内容" />
+
+                        <button class="btn btn-group-lg bg-info position-absolute button-getmss px-4"
+                            onclick="getmss()">搜索</button>
+                    </div>
+
+                </div>
+                <!-- 央视网新闻 暂时写死-->
+                <div class="row">
+                    <div class="col-12 p-0 card mt-2 border-0 mb-2">
+                        <div class="bgf4f5f6">
+                            <div class="card-card border-bottom border-dark">
+                                <a href=""><img class="w-25 align-text-bottom" src="img/login/ysxww.jpg"
+                                        alt="" />中国央视网</a>
+                            </div>
+                            <div class="card-body">
+                                <div class="list-unstyled text-none row" id="rewen">
+                                    <!-- <a class="d-block" href="">美国逾千万民众请愿弹劾特朗普 45%美国人表示赞同</a>
+                        <a class="d-block" href="">马来西亚总理马哈蒂尔：我认为我的领导表现不逊于美国总统特朗普</a>
+                        <a class="d-block" href="">重启冷战？美国兰德智库鼓吹用混合式竞赛拖垮俄罗斯经济</a>
+                        <a class="d-block" href="">哈佛教授：美国不像它想的那样强大</a> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 轮播图广告 只是个框架-->
+                <div class="bgf4f5f6 row mt-3">
+                    <div class="card-body my-3 mx-2">
+                        <img src="" alt="" />
+                    </div>
+                </div>
+                <!-- 图片广告-->
+                <!-- 精彩图片-->
+                <div class="row bgf4f5f6 mt-3">
+                    <h5 class="font-weight-bold">精彩图片</h5>
+                    <div class="col-6">
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <img src="" alt="" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <img src="" alt="" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 轮播图广告 只是个框架-->
+                <div class="bgf4f5f6 row mt-3">
+                    <div class="card-body my-3 mx-2">
+                        <img src="" alt="" />
+                    </div>
+                </div>
+                <!-- 轮播图广告 只是个框架-->
+                <div class="bgf4f5f6 row mt-3">
+                    <div class="card-body my-3 mx-2">
+                        <img src="" alt="" />
+                    </div>
+                </div>
+                <!-- 轮播图广告 只是个框架-->
+                <div class="bgf4f5f6 row mt-3">
+                    <div class="card-body m-2 p-0">
+                        <div class="row m-0 p-0">
+                            <div id="main">
+                                <div id="banner">
+                                    <div id="ul-imgs" class="transition" style="width:3000px; margin-left:0px;">
+                                        <img src="/img/lunbotu/carousel-1.jpg">
+                                        <img src="/img/lunbotu/carousel-2.jpg">
+                                        <img src="/img/lunbotu/carousel-3.jpg">
+                                        <img src="/img/lunbotu/carousel-4.jpg">
+                                        <!--注意！最后li个数要比实际图片张数多1，最后一个li里的img是重复第一张li的图片-->
+                                        <img src="/img/lunbotu/carousel-1.jpg">
+                                    </div>
+                                </div>
+                                <div id="ul-idxs">
+                                    <span id="btn-left-indexlunbo"></span>
+                                    <!--虽然li个数比实际图片张数多1，但小圆点的个数不必多1-->
+                                    <div id="li-idxs">
+                                        <div id="li-qiehuan">
+                                            <img data-imglb="0" class="active" src="/img/lunbotu/carousel-1.jpg">
+                                            <img data-imglb="1" src="/img/lunbotu/carousel-2.jpg">
+                                            <img data-imglb="2" src="/img/lunbotu/carousel-3.jpg">
+                                            <img data-imglb="3" src="/img/lunbotu/carousel-4.jpg">
+                                        </div>
+                                    </div>
+                                    <span id="btn-right-indexlunbo"></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var httpUrl = "http://127.0.0.1:3000"
+
+        function chakan() {
+            var urlParams = new URLSearchParams(location.search);
+            var pid = urlParams.get("pid");
+            // console.log(pid);
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                var src;
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var result = JSON.parse(xhr.responseText);
+                    var arr = result.data.result2;
+                    var arr2 = result.data.result1;
+                    var arr3 = result.data.result3;
+                    arr[0].pic != "null" ? src = `src` : src = `class.name=collapse`;
+                    console.log(arr[0].pic);
+                    my_title.innerHTML = arr2[0].title;
+                    my_Source_picture.innerHTML = `<img src="${arr2[0].Source_picture}"/>`;
+                    my_source.innerHTML = arr2[0].source;
+                    my_comment.innerHTML = arr2[0].comment;
+                    my_Release_time.innerHTML = arr2[0].Release_time;
+                    my_details.innerHTML = arr[0].details;
+                    my_pic.innerHTML = `<img ${src}="${arr[0].pic}"/>`;
+                    console.log(arr3);
+                    var html = "";
+                    for (var i = 0; i < arr3.length; i++) {
+                        console.log(arr3[i])
+                        html += `<div class="row m-0 b-0 border mb-2" style="height:150px">
+                                <div class="col-2 d-flex justify-content-center align-items-center">
+                                    <!-- 头像 -->
+                                    <img src="${arr3[i].xw_img}" alt="" style="width:100px;height:100px;">
+                                </div>
+                                <!-- 姓名 -->
+                                <div class="col-9">
+                                    <div class="mb-3">
+                                        <h3>${arr3[i].xw_uname}</h3>
+                                    </div>
+                                    <!-- 评论内容 -->
+                                    <div class="row">
+                                        <div class="col-9">
+                                            <span style="display: block">${arr3[i].xw_details}</span>
+                                        </div>
+                                        <div class="col-3">
+                                            <!-- 评论时间 -->
+                                            <span>${arr3[i].xw_datetime}</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>`
+                    }
+                    document.getElementById("my_seq_recommended").innerHTML = html;
+                }
+            }
+            xhr.open('get', httpUrl + '/index/detail?pid=' + pid, true);
+            xhr.send(null);
+        }
+    </script>
+    <script>
+        (function () {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var result = xhr.responseText;
+                    // console.log(result);
+                    var arr = JSON.parse(result);
+                    // console.log(arr);
+                    var title = "";
+                    var datails = "";
+                    var piiic = "";
+                    var piic = "";
+                    var href = "";
+                    for (var i = 0; i < arr.length; i++) {
+                        var src;
+                        arr[i].pic !== "null" ? src = `src` : src = `class`;
+                        title += `
+                <li class="border-bottom row mb-3">
+                <a class="col-3" href="detail.html?pid=${arr[i].pid}"><img ${src}="${arr[i].pic}" id="indexjsimg"></a>
+                <div class="col-9">
+                <div class="row mt-lg-2">
+                <a class="col-12" href="detail.html?pid=${arr[i].pid}"><span class="font-size-1">${arr[i].title}</span></a>
+                <div class="col-12 mt-3"><a class="mr-3" href="detail.html?pid=${arr[i].pid}#source"><span><img src="${arr[i].Source_picture}" alt=""/>${arr[i].source}</span></a>
+                <a href="" class="mr-3"><span>${arr[i].comment}评论</span></a>
+                <span>${arr[i].Release_time}小时前发布</span>
+                </div>
+                </div>
+                </div>
+                </li>
+                `;
+                    }
+                    var html = "";
+                    for (var i = 0; i < 12; i++) {
+                        while (html.length < 1336) {
+                            var index = Math.round(Math.random() * arr.length);
+                            // if (html.indexOf(index) == -1) {
+                            html += `
+                <li class="col-3 p-0 m-0 my-1">
+                <a href="detail.html?pid=${arr[index].pid}">
+                <img width="100%" ${src}="${arr[index].pic}">
+                </a></li>
+                <li class="col-9 my-1">
+                <a href="detail.html?pid=${arr[index].pid}">
+                <span class="font-size-2">${arr[index].title}</span>
+                </a></li>`;
+
+                            // }
+                        }
+                    }
+                    my_title1.innerHTML = title;
+                    document.getElementById("rewen").innerHTML = html;
+                }
+            }
+            xhr.open('get', httpUrl + '/index/indexjs?indexvalue=' + translate.value, true);
+            xhr.send(null);
+        })()
+    </script>
+    <script src="js/lunbotujs.js"></script>
+</body>
+
+</html>
