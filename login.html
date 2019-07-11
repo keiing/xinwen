@@ -4,16 +4,17 @@
   <meta charset="UTF-8" />
   <title>Title</title>
   <script src="js/jquery.min.js"></script>
+  <script src="js/vue.js"></script>
 </head>
 
 <body
-  style="width:1000px;min-width:600px;max-width:1200px;height:800px;background:url('http://127.0.0.1:3000/slogan_c6bab2f.png')no-repeat 65px 65px">
+  style="width:100%;min-width:600px;max-width:1224px;height:800px;background:url('http://127.0.0.1:3000/slogan_c6bab2f.png')no-repeat 65px 65px">
   <!--头部图片-->
   <div style="width: 800px;height: 50px;margin-left:20%" class="header-img">
     <img src="http://127.0.0.1:3000/logo_271e845.png" />
   </div>
   <!--主界面-->
-  <div>
+  <div id="app">
     <!--居中大框-->
     <div style="width: 300px;height: 255px;margin: 0 auto;border: 1px solid
             silver;margin-top:17%;position:relative;opacity: 0.8">
@@ -29,7 +30,7 @@
             <div style="display: inline-block">邮箱:</div>
           </div>
           <div style="width:100px;float: right">
-            <input type="text" id="uname" />
+            <input placeholder="请输入邮箱号" type="text" v-model="uname" />
           </div>
         </div>
         <!--密码-->
@@ -38,7 +39,7 @@
             <div style="display: inline-block">密码:</div>
           </div>
           <div style="width:100px;float: right">
-            <input type="password" id="upass" />
+            <input placeholder="请输入密码" type="password" v-model="upass" />
           </div>
         </div>
         <!--验证码-->
@@ -51,15 +52,30 @@
           </div>
         </div>
         <!--自动登录-->
-        <div style="margin-top: 90px;text-align: center">
-          <input type="checkbox" style="display: inline-block" />
-          <div style="display: inline-block">自动登陆</div>
+        <div v-if="thislogin">
+          <div style="margin-top: 90px;text-align: center">
+            <input type="checkbox" style="display: inline-block" />
+            <div style="display: inline-block">自动登陆</div>
+          </div>
+          <!--登陆-->
+          <div style="display: flex">
+            <div v-on="{click:handelogin}" class="Clickzhuce">还没有账号/注册</div>
+            <div class="Clicksubmit" v-on="{click:submit}">登录</div>
+          </div>
         </div>
-        <!--登陆-->
-        <div id="Clicksubmit">登录</div>
+        <div v-else="!thislogin">
+          <div style="margin-top: 90px;text-align: center">
+            <div style="display: inline-block"></div>
+          </div>
+          <!--登陆-->
+          <div style="display: flex">
+            <div v-on="{click:handelogin}" class="Clickzhuce">已账号/去登陆</div>
+            <div class="Clicksubmit">注册</div>
+          </div>
+        </div>
       </div>
       <!--右下角免费注册-->
-      <div style="background-color: darkgreen;
+      <div v-on="{click:handelogin}" style="background-color: darkgreen;
                          color:white;
                          width: 100px;
                          height:30px;
@@ -68,7 +84,7 @@
                          bottom: 5px;
                          text-align: center;
                          line-height: 30px">
-        免费注册>>
+        {{mianfeizhuce}}
       </div>
       <div style="clear: both"></div>
     </div>
@@ -78,50 +94,73 @@
   var httpIndexUrl = "http://127.0.0.1:5500/index.html";
   var uname = document.getElementById("uname");
   var upass = document.getElementById("upass");
-  var submit = document.getElementById("Clicksubmit");
-  var url = "http://127.0.0.1:3000/";
-  submit.onclick = function () {
-    if (uname.value && upass.value) {
-      $.ajax({
-        url: url + "login",
-        timeout: 3000,
-        type: "post",
-        xhrFields: {
-          withCredentials: true
-        },
-        crossDomain: true,
-        data: {
-          email: uname.value,
-          upass: upass.value
-        },
-        success: function (result) {
-          if (result.code == "200") {
-            console.log(result);
-            sessionStorage.setItem("data", JSON.stringify(result.data[0]));
-            // sessionStorage.setItem("id", result.data);
-            alert("2秒后自动跳转首页");
-            setTimeout(() => {
-              location.href = httpIndexUrl;
-            }, 2000);
-          } else {
-            alert(result.msg)
-          }
-        },
-        complete: function (XMLHttpRequest, status) { //请求完成后最终执行参数
-          if (status == "timeout") { //超时,status还有success,error等值的情况
-            ajaxTimeoutTest.abort(); //终止请求
-            alert("超时");
-          }
-        }
-
-      });
-    } else {
-      alert("账号或密码不能为空")
-    }
-  };
   $(".header-img").on("click", function () {
     location.href = httpIndexUrl;
   });
+</script>
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      thislogin: true,
+      mianfeizhuce: "免费注册",
+      uname: "",
+      upass: ""
+    },
+    methods: {
+      handelogin() {
+        if (this.thislogin) {
+          this.mianfeizhuce = "登陆"
+          this.thislogin = false
+
+        } else {
+          this.thislogin = true
+          this.mianfeizhuce = "免费注册"
+        }
+      },
+      submit() {
+        var url = "http://127.0.0.1:3000/";
+        console.log(window.$.ajax())
+        if (this.uname && this.upass) {
+          window.$.ajax({
+            url: url + "login",
+            timeout: 3000,
+            type: "post",
+            xhrFields: {
+              withCredentials: true
+            },
+            crossDomain: true,
+            data: {
+              email: this.uname,
+              upass: this.upass
+            },
+            success: function (result) {
+              if (result.code == "200") {
+                console.log(result);
+                sessionStorage.setItem("data", JSON.stringify(result.data[0]));
+                // sessionStorage.setItem("id", result.data);
+                alert("2秒后自动跳转首页");
+                setTimeout(() => {
+                  location.href = httpIndexUrl;
+                }, 2000);
+              } else {
+                alert(result.msg)
+              }
+            },
+            complete: function (XMLHttpRequest, status) { //请求完成后最终执行参数
+              if (status == "timeout") { //超时,status还有success,error等值的情况
+                ajaxTimeoutTest.abort(); //终止请求
+                alert("超时");
+              }
+            }
+
+          });
+        } else {
+          alert("账号或密码不能为空")
+        }
+      }
+    },
+  })
 </script>
 
 </html>
@@ -137,7 +176,7 @@
     display: inline-block
   }
 
-  #Clicksubmit {
+  .Clicksubmit {
     width: 150px;
     height: 30px;
     background-color: red;
@@ -148,7 +187,18 @@
     margin-top: 10px;
   }
 
-  #Clicksubmit:active {
+  .Clicksubmit:active {
     background: #000;
+  }
+
+  .Clickzhuce {
+    width: 150px;
+    height: 30px;
+    background-color: green;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    margin: 0 auto;
+    margin-top: 10px;
   }
 </style>

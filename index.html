@@ -10,17 +10,13 @@
     <title>Document</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="stylesheet" href="css/bootstrap.css">
-    <script src='js/jquery.min.js'></script>
-    <script src='js/popper.min.js'></script>
-    <script src='js/bootstrap.min.js'></script>
-    <script src="js/index.js"></script>
-    <script src="js/sousuo.js"></script>
+
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/coms.css" />
     <!-- <link rel="stylesheet" href="header.css"> -->
     <!-- <script src="header.js"></script> -->
     <link rel="stylesheet" href="js/tabs/tabs.css">
-    <script src="js/tabs/tabs.js"></script>
+
     <link rel="stylesheet" href="./css/indexlunbo.css">
 
 
@@ -33,7 +29,7 @@
         <my-header :mydate="mydate"></my-header>
     </div>
 
-    <div class="row m-0 p-0">
+    <div id="myapp" class="row m-0 p-0">
         <!-- 左侧导航按钮 -->
         <div class="col-lg-2 col-md-12">
             <div class="position-fixed-fixed">
@@ -157,25 +153,27 @@
                                     placeholder="有什么新鲜事想告诉大家"></textarea>
                                 <div class="">
                                     <input type="file" id="pic" accept="image/gif, image/jpeg" class="" />
-                                    <input type="checkbox" />发布长文
+                                    <input v-model="submitchangwen" type="checkbox" />发布长文
                                     表情
-                                    <button class="btn btn-danger float-right" onclick="get_fa_bu()">发布</button>
+                                    <button v-on:click="fabu1" class="btn btn-danger float-right">发布</button>
                                 </div>
                             </div>
                             <div class="tab-pane col-12 px-0 mx-0" id="input2">
                                 <textarea rows="5" class="p-0 m-0 w-100" id='details2' list='details_list'
                                     required='required' placeholder="视频标题(30字以内)"></textarea>
-                                添加视频<input type="file" id="video" />
-                                <button class="btn btn-danger right-right float-right">发布</button>
+                                添加视频<input v-model="submitvideo" type="file" id="video" />
+                                <button v-on="{click:fabu2video}"
+                                    class="btn btn-danger right-right float-right">发布</button>
                             </div>
                             <div class="tab-pane" id="input3">
-                                <input class="input-group-lg w-100 p-1" type="text" placeholder="请输入问题标题(4-40字)" />
-                                <textarea rows="3" class="w-100" id='details2' list='details_list' required='required'
-                                    placeholder="添加问题背景描述（选填,0-40字）"></textarea>
-                                添加图片<input type="file" id="pic2" accept="image/gif,image/jpeg"
+                                <input v-model="submitwenda.title" class="input-group-lg w-100 p-1" type="text"
+                                    placeholder="请输入问题标题(4-40字)" />
+                                <textarea v-model="submitwenda.detail" rows="3" class="w-100" id='details2'
+                                    list='details_list' required='required' placeholder="添加问题背景描述（选填,0-40字）"></textarea>
+                                添加图片<input v-model="submitwenda.img" type="file" id="pic2" accept="image/gif,image/jpeg"
                                     class="btn btn-group-sm" />
                                 <a href="">更多问答</a>
-                                <button class="btn btn-danger float-right">发布</button>
+                                <button v-on="{click:fabu3wenda}" class="btn btn-danger float-right">发布</button>
                             </div>
                         </div>
                     </div>
@@ -245,10 +243,11 @@
         </div>
         <div class="col-lg-3 col-md-12 position-relative m-0 p-0">
             <div class="position-relative-sousuo w-100">
-                <input type="text" class="input-group input-group-te" id="title" placeholder="请输入要搜索的内容" />
+                <input v-model="getmssinput" type="text" class="input-group input-group-te" id="title"
+                    placeholder="请输入要搜索的内容" />
 
                 <button class="btn btn-group-lg bg-info position-absolute button-getmss px-4"
-                    onclick="getmss()">搜索</button>
+                    v-on="{click:getmsss}">搜索</button>
                 <!--<button class="m-0 p-0 btn position-absolute button-getmss" onclick="getmss()"><img src="img/header/search2.png"/></button>-->
             </div>
             <div class="card mt-2 border-0">
@@ -434,8 +433,68 @@
             </div>
         </div>
     </div>
-    </div>
 
+    <script src="./js/indexnotlogin.js"></script>
+    <script src='js/jquery.min.js'></script>
+    <script src='js/popper.min.js'></script>
+    <script src='js/bootstrap.min.js'></script>
+    <script src="js/index.js"></script>
+    <script src="js/sousuo.js"></script>
+    <script src="js/tabs/tabs.js"></script>
+    <script src="js/vue.js"></script>
+    <script>
+        new Vue({
+            el: "#myapp",
+            data: {
+                submitchangwen: "",//发布图片内容区域
+                submitvideo: "",//发布视频对应数据
+                submitwenda: { title: "", detail: "", img: "" },//发布问答对应数据
+                getmssinput: ""//搜索内容的输入框
+            },//定义数据层
+            methods: {
+                //事件定义层
+                fabu1() {
+                    console.log(this.submitchangwen)//发布图片
+                },
+                fabu2video() {
+                    console.log(this.submitvideo)//发布视频
+                },
+                fabu3wenda() {
+                    console.log(this.submitwenda)//发布问答
+                },
+                getmsss() {//向服务器发送ajax请求
+                    console.log(this.getmssinput)
+
+                    var xhr = new XMLHttpRequest();
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState == 4 && xhr.status == 200) {
+                            var result = xhr.responseText;
+                            var arr = JSON.parse(result);
+                            var title = "";
+                            if (arr.length > 0) {
+                                if (arr[0].pid != undefined) {
+                                    if (result.length > 0) {
+                                        for (var i = 0; i < arr.length; i++) {
+                                            title += `<li><a href="logintj.html?pid=${arr[i].pid}">${arr[i].title}</a></li>`
+                                        }
+                                    }
+                                } else {
+                                    for (var i = 0; i < arr.length; i++) { title += `<li><a href="loginjs.html?pid=${arr[i].pid}">${arr[i].title}</a></li>` }
+                                }
+                            } else {
+                                title = `<h1>没有查找到该信息</h1>`
+                            }
+                            document.write(title);
+                        }
+                    }
+                    xhr.open("get", "http://127.0.0.1:3000/index/selecttitle?title=" + title.value, true);
+                    xhr.send();
+                }
+            },
+            component: {
+            }
+        })
+    </script>
     <script>
         $(function () {
 
@@ -653,8 +712,7 @@
             }
         }
     </script>
-    <script src="./js/indexnotlogin.js">
-    </script>
+
 </body>
 <style>
     .col-lg-7.col-md-12.tab-content ul {
