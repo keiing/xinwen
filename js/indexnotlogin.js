@@ -1,4 +1,5 @@
 function get_index(n, index) {
+    var urlhttp = "http://127.0.0.1:3000/"
     if (n !== null) {
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function () {
@@ -13,39 +14,30 @@ function get_index(n, index) {
                 console.log(index);
                 for (var i = 0; i < arr.length; i++) {
                     title += `
-                <li data-id = "${arr[i].pid}" 
-                class="notopoenclass border-bottom row mb-3" 
-                style="min-width:600px;">
-                    <a class="${arr[i].pic != "null"
-                            ? "col-3" : ''}"  href="detail.html?pid=${arr[i].pid}">
-                        <img src="${arr[i].pic}" 
-                        style="${arr[i].pic != 'null' ? 'width:10rem' : ''}">
-                    </a>
-                    <div class="col-9" style="padding-left:40px">
-                        <div class="row mt-lg-2 ml-0" style="min-width:160px;">
-                            <a class="col-12" 
-                                href="detail.html?pid=${arr[i].pid}">
-                                <span class="font-size-1">${arr[i].title}</span>
-                            </a>
-                            <div class="col-12 mt-3"><a class="mr-3" href="detail.html?pid=${arr[i].pid}#source">
-                                    <div>
-                                        <img src="${arr[i].Source_picture}" alt=""/>
-                                        <span>${arr[i].source}</span>
-                            </div>
-                    </a>
-                    <a href="" class="mr-3">
-                        <span>${arr[i].comment}评论</span>
-                    </a>
-                        <span>${arr[i].Release_time}小时前发布</span>
-                        </div>
-                        </div>
+                <li data-id="${arr[i].pid}" class="notopoenclass border-bottom row ml-0 mb-3" style="min-width:600px;">
+                <a class="${!arr[i].pic ? "col-3" : ''}" href="detail.html?pid=${arr[i].pid}">
+                    <${!!arr[i].pic ? 'img' : 'any'} src="${urlhttp}${arr[i].pic}" style="${arr[i].pic != 'null' ? 'width:10rem' : ''};">
+                </a>
+                <div class="col-9">
+                <div class="row mt-lg-2" style="min-width:160px;">
+                <a class="col-12" href="detail.html?pid=${arr[i].pid}"><span class="font-size-1">${arr[i].title}</span></a>
+                <div class="col-12 mt-3 pt-2 pl-3 align-items-center"><a class="mr-3" href="detail.html?pid=${arr[i].pid}#source">
+                <span class="pr-4"><img style="width:25px;" src="${urlhttp}${arr[i].Source_picture}" alt=""/>${arr[i].source}</span></a>
+                <a href="" class="mr-3"><span class="pr-3">${arr[i].comment}评论</span></a>
+                <span>${arr[i].Release_time}小时前发布</span>
                 </div>
-                    <img class="notopenclass" data-id="${arr[i].pid}" src="http://127.0.0.1:3000/notopen.png"/>
+                </div>
+                </div>
+                <img  class="notopenclass" data-id="${arr[i].pid}" src="${urlhttp}tubiao/shanchutubiao.png"/>
                 </li>
                 `;
+                    //有错误暂时写死
+                    //piic+=`<div class="carousel-item w-100"><img class="w-100" src="${arr[i].pic}"/></div>`;
+                    //piiic+=`<li data-target="#demo3" data-slide-to="${i+1}"><img class="w-100" src="${arr[i].pic}"/></li>`;
+                    //details=arr[i].details;
+                    //pic1=`<a href="login.html?pid=${arr[0].pid}"><img src="${arr[0].pic}"></a>`;
+                    //seq_recommended=arr[i].seq_recommended;
                 }
-
-
                 // document.getElementById("gengduo").addEventListener("click", (e) => {
                 // e.preventDefault();
                 // console.log(e.target.href);

@@ -162,3 +162,72 @@ div.tab-pane>ul>li a:hover {
     width: 1.5rem;
     height: 1.5rem;
 }
+    .col-lg-7.col-md-12.tab-content ul {
+        min-width: 630px;
+    }
+
+    .col-12.border-radius.bg-info.p-0.m-0 {
+        min-width: 513px;
+    }
+
+    @media screen and (max-width:720px) {
+        #gengduo.navbar-brand.nav.pt-1.list-unstyled.btn-group-vertical.nav-pills.mt-0.justify-content-around {
+            min-width: 513px;
+        }
+
+        #huanyinghuilai,
+        #denglu {
+            position: fixed;
+            top: 140px;
+            left: 0px;
+        }
+
+        #denglu {
+            /* width: 100px !important; */
+            height: 0px;
+        }
+
+        #denglu>.card-body.m-3.bg-white.text-center {
+            height: 0px;
+            position: absolute;
+            top: -219px;
+            left: 10px;
+        }
+    }
+
+    .col-lg-3.col-md-12.position-relative.m-0.p-0 {
+        min-width: 240px;
+    }
+
+    #motaikuang {
+        display: none;
+        background-color: #fff;
+        /* height: 200px; */
+    }
+
+    #motaikuang button {
+        height: 50px;
+        width: 100%;
+    }
+
+    #motaikuang button:active {
+        background-color: #f00;
+    }
+
+    #inputImgFile {
+        position: relative;
+        top: 10px;
+        /* left: 10%; */
+        width: 300px;
+        height: 500px;
+        background: #000;
+        color: #fff;
+        z-index: 10;
+        font-size: 17px;
+        display: none;
+    }
+
+    #inputImgFile>button {
+        width: 100%;
+        height: 40px;
+    }

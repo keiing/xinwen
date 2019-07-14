@@ -1,4 +1,5 @@
 (function getms() {
+    var urlhttp = "http://127.0.0.1:3000/"
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
@@ -16,18 +17,19 @@
                     title += `
                 <li data-id="${arr[i].pid}" class="notopoenclass border-bottom row ml-0 mb-3" style="min-width:600px;">
                 <a class="${!arr[i].pic ? "col-3" : ''}" href="detail.html?pid=${arr[i].pid}">
-                    <${!!arr[i].pic ? 'img' : 'any'} src="${arr[i].pic}" style="${arr[i].pic != 'null' ? 'width:10rem' : ''};">
+                    <${!!arr[i].pic ? 'img' : 'any'} src="${urlhttp}${arr[i].pic}" style="${arr[i].pic != 'null' ? 'width:10rem' : ''};">
                 </a>
                 <div class="col-9">
                 <div class="row mt-lg-2" style="min-width:160px;">
                 <a class="col-12" href="detail.html?pid=${arr[i].pid}"><span class="font-size-1">${arr[i].title}</span></a>
-                <div class="col-12 mt-3"><a class="mr-3" href="detail.html?pid=${arr[i].pid}#source"><span><img src="${arr[i].Source_picture}" alt=""/>${arr[i].source}</span></a>
-                <a href="" class="mr-3"><span>${arr[i].comment}评论</span></a>
+                <div class="col-12 mt-3 pt-2 pl-3 align-items-center"><a class="mr-3" href="detail.html?pid=${arr[i].pid}#source">
+                <span class="pr-4"><img style="width:25px;" src="${urlhttp}${arr[i].Source_picture}" alt=""/>${arr[i].source}</span></a>
+                <a href="" class="mr-3"><span class="pr-3">${arr[i].comment}评论</span></a>
                 <span>${arr[i].Release_time}小时前发布</span>
                 </div>
                 </div>
                 </div>
-                <img  class="notopenclass" data-id="${arr[i].pid}" src="http://127.0.0.1:3000/notopen.png"/>
+                <img  class="notopenclass" data-id="${arr[i].pid}" src="${urlhttp}tubiao/shanchutubiao.png"/>
                 </li>
                 `;
                     //有错误暂时写死
@@ -50,7 +52,7 @@
                     html += `
                 <li class="col-3 p-0 m-0 my-1">
                 <a href="detail.html?pid=${arr[arrstr[i]].pid}">
-                <img width="100%" src="${arr[arrstr[i]].pic}">
+                <img width="100%" src="${urlhttp}${arr[arrstr[i]].pic}">
                 </a></li>
                 <li class="col-9 my-1">
                 <a href="detail.html?pid=${arr[arrstr[i]].pid}">
