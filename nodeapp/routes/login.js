@@ -30,19 +30,21 @@ router.post("/userava", multipartyMiddleware, (req, res) => {
     .split("\\")
     .slice(1)
     .join("/");
-  var url = "http://127.0.0.1:3000/" + imgPathUrl;
+  // var url = "http://127.0.0.1:3000/" + imgPathUrl;
+  var url = imgPathUrl;
   // //可以不写
   fs.readFile("public\\" + imgPathUrl, (err, dataBuffer) => {
     if (err) throw err;
     //   //在写到文件制定路径
-    fs.writeFile("../public/img", dataBuffer, function (err) {
+    fs.writeFile("../public/user", dataBuffer, function (err) {
       if (err) res.send(err);
       else res.send({
         code: 200,
         msg: "上传成功",
-        data: url
+        data: imgPathUrl
       });
       var sql = "update xw_user set xw_img=? WHERE xw_uid=?";
+      console.log(url)
       async (sql, [url, uid]);
     });
   });

@@ -14,7 +14,7 @@ function get_index(n, index) {
                 console.log(index);
                 for (var i = 0; i < arr.length; i++) {
                     title += `
-                <li data-id="${arr[i].pid}" class="notopoenclass border-bottom row ml-0 mb-3" style="min-width:600px;">
+                <li data-id="${arr[i].pid}" class="notopoenclass border-bottom row ml-0 mb-3" style="align-items:center;min-width:600px;">
                 <a class="${!arr[i].pic ? "col-3" : ''}" href="detail.html?pid=${arr[i].pid}">
                     <${!!arr[i].pic ? 'img' : 'any'} src="${urlhttp}${arr[i].pic}" style="${arr[i].pic != 'null' ? 'width:10rem' : ''};">
                 </a>

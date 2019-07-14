@@ -14,7 +14,7 @@ var loginRouter = require("./routes/login.js");
 var server = express();
 //存放图片路径
 server.use(multiparty({
-  uploadDir: './public/img'
+  uploadDir: './public/user'
 }))
 
 server.use(
