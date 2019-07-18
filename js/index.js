@@ -17,12 +17,12 @@
                     title += `
                 <li data-id="${arr[i].pid}" class="notopoenclass border-bottom row ml-0 mb-3" style="align-items:center;min-width:600px;">
                 <a class="${!arr[i].pic ? "col-3" : ''}" href="detail.html?pid=${arr[i].pid}">
-                    <${!!arr[i].pic ? 'img' : 'any'} src="${urlhttp}${arr[i].pic}" style="${arr[i].pic != 'null' ? 'width:10rem' : ''};">
+                    <${!!arr[i].pic ? 'img' : 'any'} src="${urlhttp}${arr[i].pic}" style="${arr[i].pic != 'null' ? 'width:10rem;height:8rem;' : ''};">
                 </a>
                 <div class="col-9">
                 <div class="row mt-lg-2" style="min-width:160px;">
                 <a class="col-12" href="detail.html?pid=${arr[i].pid}"><span class="font-size-1">${arr[i].title}</span></a>
-                <div class="col-12 mt-3 pt-2 pl-3 align-items-center"><a class="mr-3" href="detail.html?pid=${arr[i].pid}#source">
+                <div class="col-12 mt-3 pt-2 pl-3 mb-3 align-items-center"><a class="mr-3" href="detail.html?pid=${arr[i].pid}#source">
                 <span class="pr-4"><img style="width:25px;" src="${urlhttp}${arr[i].Source_picture}" alt=""/>${arr[i].source}</span></a>
                 <a href="" class="mr-3"><span class="pr-3">${arr[i].comment}评论</span></a>
                 <span>${arr[i].Release_time}小时前发布</span>

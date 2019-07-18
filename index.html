@@ -29,10 +29,10 @@
     <!-- <my-header :mydate="mydate"></my-header> -->
     <!-- </div> -->
 
-    <div id="myapp" class="row m-0 p-0">
+    <div id="myapp" class="row m-0 p-lg-0">
         <!-- 左侧导航按钮 -->
         <div class="col-lg-2 col-md-12">
-            <div class="position-fixed-fixed">
+            <div class="position-fixed-fixed myappleft">
                 <ul class="m-0 p-0 list-unstyled">
                     <li><a href=""><img src="http://127.0.0.1:3000/header/search.png" class="ml-0 aimg"></a></li>
                 </ul>
@@ -497,7 +497,7 @@
         })
     </script> -->
     <script>
-        window.ImgUrl="http://127.0.0.1:3000/"
+        window.ImgUrl = "http://127.0.0.1:3000/"
         $(function () {
             //封装的切换标签栏
             $("#nav-bar").Navbar();
@@ -635,7 +635,7 @@
                         },
                         crossDomain: true,
                         success: function (result) {
-                            $("#fileidsrcimg").attr("src",result.data)
+                            $("#fileidsrcimg").attr("src", result.data)
                             alert(JSON.parse(result));
                         }
                     })

@@ -32,7 +32,6 @@ div>div>div>ul>li.nav-item>a.nav-link>img,
 @media screen and (max-width:991px) {
     div>div>div.position-fixed-fixed>ul>li {
         float: left;
-
     }
 
     .tab-pane div.col-9 {
@@ -46,6 +45,9 @@ div>div>div>ul>li.nav-item>a.nav-link>img,
     div.row>div>div.position-relative-sousuo {
         position: fixed !important;
         top: 30px;
+    }
+    .position-fixed-fixed.myappleft{
+        margin-top:4rem;
     }
 }
 
@@ -146,6 +148,13 @@ div.tab-pane>ul>li a:hover {
     /* margin-top: -7px; */
 }
 
+/* 左侧导航栏 */
+@media screen and (min-width:892px){
+    .position-fixed-fixed.myappleft{
+        margin-top:3rem;
+        margin-left:3%;
+    }
+}
 .h-200 {
     height: 200px;
     width: 200px;
@@ -158,8 +167,8 @@ div.tab-pane>ul>li a:hover {
 
 .notopenclass {
     position: absolute;
-    right: 6.5rem;
-    bottom: .5rem;
+    right: 1.5rem;
+    bottom: .2rem;
     width: 1.5rem;
     height: 1.5rem;
 }
@@ -168,7 +177,7 @@ div.tab-pane>ul>li a:hover {
     }
 
     .col-12.border-radius.bg-info.p-0.m-0 {
-        min-width: 513px;
+        min-width: 632px;
     }
 
     @media screen and (max-width:720px) {
