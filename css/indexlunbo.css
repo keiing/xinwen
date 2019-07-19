@@ -111,9 +111,9 @@
            left: 130px;
        }
 
-       div.col-lg-3.col-md-12.position-relative.m-0.p-0 {
+       /* div.col-lg-3.col-md-12.position-relative.m-0.p-0 {
            display: none;
-       }
+       } */
    }
 
    @media all and (min-width:851px) and (max-width:1220px) {

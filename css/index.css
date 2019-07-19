@@ -13,6 +13,21 @@ div>div>div>ul>li.nav-item>a.nav-link>img,
 }
 
 @media screen and (min-width:992px) {
+    .notopoenclass {
+    position: relative;
+    align-items:center;
+    min-width:736px;
+    }
+    /* 大屏状态登录条隐藏 */
+    .denglu123{
+       display: none;
+    }
+    .notopoenclass2{
+        min-width:160px
+    }
+    .indeximgsss{
+    width:10rem;height:8rem
+    }
     div>div>div.position-fixed-fixed {
         position: fixed;
     }
@@ -23,13 +38,47 @@ div>div>div>ul>li.nav-item>a.nav-link>img,
 
 }
 
-/* @media screen and (max-width:777px) {
-    div>div>div.position-fixed-fixed>ul>li {
+@media screen and (max-width:1024px) and (min-width:443px) {
+    /* div>div>div.position-fixed-fixed>ul>li {
         float: left;
+    } */
+     .notopoenclass.border-bottom.row.ml-0.mb-3{
+    /* position: relative; */
+    /* align-items:center; */
+    min-width:600px;
     }
-} */
+    .notopoenclass2{
+    min-width:160px
+    }
+    .indeximgsss{
+    width:10rem;
+    height:8rem
+    }
+       #denglu123.collapse.navbar-collapse.text-center #content{
+        display: none !important;
+    }
+}
 
-@media screen and (max-width:991px) {
+@media screen and (max-width:991px) and (min-width:443px) {
+    .notopoenclass.border-bottom.row.ml-0.mb-3{
+    /* position: relative; */
+    /* align-items:center; */
+    min-width:750px;
+    }
+    .notopoenclass2{
+    min-width:160px
+    }
+    .indeximgsss{
+    width:10rem;
+    height:8rem
+    }
+    #disannone{
+        display: none;
+    }
+    .bgf4f5f6.mt-3.border-top.border-danger{
+        display: none;
+    }
+    .col-lg-3.col-md-12.position-relative.m-0.p-0{}
     div>div>div.position-fixed-fixed>ul>li {
         float: left;
     }
@@ -44,11 +93,36 @@ div>div>div>ul>li.nav-item>a.nav-link>img,
 
     div.row>div>div.position-relative-sousuo {
         position: fixed !important;
-        top: 30px;
+        top: 45px;
     }
     .position-fixed-fixed.myappleft{
-        margin-top:4rem;
+        margin-top:5rem;
     }
+ 
+    #denglu{
+        width: 100%;
+        padding:0;
+        margin:0;
+        position:fixed;
+        top:0px;
+    }
+    #denglu .card-body.m-3.bg-white.text-center{
+       padding: 0px;
+       height: 0;
+       display: none;
+    }
+    #denglu .font-size-3{
+         display:none;
+     }
+     #denglu>.denglu123{
+         /* background: #000; */
+         /* text-align: right; */
+         display: block
+     }
+
+     #denglu>.denglu123>span{
+         /* text-align: right; */
+     }
 }
 
 div.row>div.col-2>div>ul {
@@ -149,29 +223,25 @@ div.tab-pane>ul>li a:hover {
 }
 
 /* 左侧导航栏 */
-@media screen and (min-width:892px){
+@media screen and (max-width:892px) and (min-width:443px){
+    .notopoenclass {
+    position: relative;
+    align-items:center;
+    min-width:600px;
+    }
+    .notopoenclass2{
+    min-width:160px
+    }
+    .indeximgsss{
+    width:10rem;height:8rem
+    }
+    .denglu123{
+        display: none;
+    }
     .position-fixed-fixed.myappleft{
         margin-top:3rem;
         margin-left:3%;
     }
-}
-.h-200 {
-    height: 200px;
-    width: 200px;
-}
-
-.notopoenclass {
-    position: relative;
-    ;
-}
-
-.notopenclass {
-    position: absolute;
-    right: 1.5rem;
-    bottom: .2rem;
-    width: 1.5rem;
-    height: 1.5rem;
-}
     .col-lg-7.col-md-12.tab-content ul {
         min-width: 630px;
     }
@@ -179,8 +249,22 @@ div.tab-pane>ul>li a:hover {
     .col-12.border-radius.bg-info.p-0.m-0 {
         min-width: 632px;
     }
+}
+.h-200 {
+    height: 200px;
+    width: 200px;
+}
 
-    @media screen and (max-width:720px) {
+
+.notopenclass {
+    right: 1.5rem;
+    bottom: .2rem;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+
+    @media screen and (max-width:720px) and (min-width:443px) {
         #gengduo.navbar-brand.nav.pt-1.list-unstyled.btn-group-vertical.nav-pills.mt-0.justify-content-around {
             min-width: 513px;
         }
@@ -188,13 +272,14 @@ div.tab-pane>ul>li a:hover {
         #huanyinghuilai,
         #denglu {
             position: fixed;
-            top: 140px;
+            /* top: 140px; */
             left: 0px;
         }
 
         #denglu {
             /* width: 100px !important; */
             height: 0px;
+            background:transparent;
         }
 
         #denglu>.card-body.m-3.bg-white.text-center {
@@ -203,11 +288,11 @@ div.tab-pane>ul>li a:hover {
             top: -219px;
             left: 10px;
         }
+        .col-lg-3.col-md-12.position-relative.m-0.p-0 {
+            min-width: 240px;
+        }
     }
 
-    .col-lg-3.col-md-12.position-relative.m-0.p-0 {
-        min-width: 240px;
-    }
 
     #motaikuang {
         display: none;
@@ -241,3 +326,68 @@ div.tab-pane>ul>li a:hover {
         width: 100%;
         height: 40px;
     }
+@media screen and (max-width:442px){
+     #disannone{
+        display: none;
+    }
+    .bgf4f5f6.mt-3.border-top.border-danger{
+        display: none;
+    }
+    div>div>div.position-fixed-fixed>ul>li {
+        float: left;
+    }
+
+    .tab-pane div.col-9 {
+        min-width: 140px;
+    }
+
+    div>div>div.position-fixed-fixed>ul>li>a>img {
+        padding-top: 20px;
+    }
+
+    div.row>div>div.position-relative-sousuo {
+        position: fixed !important;
+        top: 45px;
+    }
+    .position-fixed-fixed.myappleft{
+        margin-top:5rem;
+    }
+ 
+    #denglu{
+        background: transparent;
+        width: 100%;
+        padding:0;
+        margin:0;
+        position:fixed;
+        top:0px;
+    }
+    #denglu .card-body.m-3.bg-white.text-center{
+       padding: 0px;
+       height: 0;
+       display: none;
+    }
+    #denglu .font-size-3{
+         display:none;
+     }
+     #denglu>.denglu123{
+         /* background: #000; */
+         /* text-align: right; */
+         display: block
+     }
+    .notopoenclass.border-bottom.row.ml-0.mb-3{
+    /* position: absolute; */
+    align-items:center;
+     display: flex;
+     justify-content: center;
+     /* justify-items: center; */
+}
+.notopoenclass2{
+   
+    width:100%;
+}
+.indeximgsss{
+    /* width:100%;height:8rem */
+    width:300px;
+    height:200px;
+}
+}
