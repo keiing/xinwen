@@ -257,8 +257,9 @@ div.tab-pane>ul>li a:hover {
 
 
 .notopenclass {
-    right: 1.5rem;
-    bottom: .2rem;
+    position:absolute;
+    right: 2.2rem;
+    bottom: .3rem;
     width: 1.5rem;
     height: 1.5rem;
 }
